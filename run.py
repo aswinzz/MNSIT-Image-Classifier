@@ -9,11 +9,12 @@ from keras.models import load_model
 from PIL import Image
 import sys
 from keras import backend as K
-
+import sys
 
 K.clear_session()
 model = load_model('model.h5')
-pic = Image.open("images/0_a.png")
+file_name="images/"+sys.argv[1]+".png"
+pic = Image.open(file_name)
 Pic = np.array(pic)
 x = Pic.reshape((1,)+Pic.shape+(1,))
 val = model.predict(x)
