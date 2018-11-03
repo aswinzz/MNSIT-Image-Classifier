@@ -11,7 +11,6 @@ import sys
 from keras import backend as K
 import sys
 
-K.clear_session()
 model = load_model('model.h5')
 file_name="images/"+sys.argv[1]+".png"
 pic = Image.open(file_name)
