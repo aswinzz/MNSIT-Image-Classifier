@@ -30,4 +30,5 @@ for file in os.listdir(directory):
         ans.append(pred)
         print(pred)
     else:
-        print(pred," is Already present")
+        # print(pred," is Already present")
+        pass

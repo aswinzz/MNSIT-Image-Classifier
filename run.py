@@ -12,9 +12,12 @@ from keras import backend as K
 import sys
 
 model = load_model('model.h5')
-file_name="images/"+sys.argv[1]+".png"
+print("Enter the file name")
+name=input()
+file_name="images/"+name+".png"
 pic = Image.open(file_name)
 Pic = np.array(pic)
 x = Pic.reshape((1,)+Pic.shape+(1,))
+# print((1,)+Pic.shape+(1,))
 val = model.predict(x)
 print(val[0].argmax(axis=0))
